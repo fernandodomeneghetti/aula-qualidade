@@ -18,13 +18,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
             node-version: '22.17.0'
-      - name: Install dependencies
+      - name: install package
         run: npm install
         working-directory: ./test
       
       - name: Start server
         run: npm start &
-        env:
+        env: 
           CI: true
         working-directory: ./test
       
