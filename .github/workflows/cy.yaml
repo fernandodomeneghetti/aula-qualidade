@@ -18,13 +18,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
             node-version: '22.17.0'
-      - name: install package
+      - name: Install dependencies
         run: npm install
+        working-directory: ./test
+      
       - name: Start server
         run: npm start &
-        env: 
+        env:
           CI: true
+        working-directory: ./test
+      
       - name: Run Cypress
         run: npx cypress run
         env:
           CI: true
+        working-directory: ./test
