@@ -10,6 +10,8 @@ jobs:
   validacao:
     runs-on: ubuntu-latest
     steps:
+      - name: enter path
+        run: cd test
       - name: Obter codigo
         uses: actions/checkout@v3
       - name: Setup node
